@@ -2,18 +2,70 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="description" content="iThorgrim Scripts">
+        <meta name="keywords" content="AIO, Eluna, iThorgrim, Wrath of the Lich King, Warlog, AzerothCore, TrinityCore, Lua script">
+        <meta name="author" content="iThorgrim">
+        
         <title>iThorgrim</title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <!-- <link rel="stylesheet" href="static/css/core"> -->
-        <!-- <link rel="stylesheet" href="static/css/wow_style.css"> -->
 
         <link rel="stylesheet" href="./static/css/main.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     </head>
 
     <body>
+    <header class="ml-1 mr-1 p-3 text-bg-dark" style="background-color: #00000040 !important;">
+            <div class="container">
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none me-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 1 48 48" part="icon blz-icon">
+                    <path fill="#2B374C" fill-rule="evenodd" d="M24 8.848c8.8 0 16 7.255 16 16.121 0 8.867-7.2 16.121-16 16.121S8 33.836 8 24.97c0-8.867 7.2-16.122 16-16.122Z" clip-rule="evenodd"></path>
+                    <path fill="#F4BF2A" fill-rule="evenodd" d="M44 24.97c0-4.031-1.2-8.061-3.6-11.487V8.647c0-.202-.2-.202-.2-.202h-4.8c-6.8-4.635-15.8-4.635-22.6 0H7.6v5.038c-4.8 6.851-4.8 16.12 0 22.972v4.837c0 .201.2.201.2.201h4.8c6.8 4.635 15.8 4.635 22.8 0h4.8c.2 0 .2-.202.2-.403v-4.836c2.4-3.224 3.6-7.255 3.6-11.285Zm-37.4-.001c0-9.673 7.8-17.531 17.4-17.531 9.6 0 17.4 7.859 17.4 17.531 0 9.673-7.8 17.532-17.4 17.532-9.6 0-17.4-7.86-17.4-17.532Z" clip-rule="evenodd"></path>
+                    <path fill="#F4BF2A" fill-rule="evenodd" d="M12.4 15.498H19c-.2.806-.2 1.612-.2 2.418C19 20.94 21 29 21 29l3-12.695 3.2 12.292s2-10.881 2-11.687c0-.605-.4-1.008-.8-1.411h7c-1 .806-1.6 2.015-2 3.224-.6 2.418-2.8 14.509-2.8 15.315 0 .806.4 1.612.8 2.217H25c.2-.605.2-1.21.2-1.814 0-1.209-1-6.448-1-6.448s-1.4 5.44-1.4 6.448c0 .605.2 1.21.4 1.814h-6.6s1.2-1.008 1.2-1.814c-.2-2.418-3.6-15.315-3.8-16.322 0-1.008-.6-2.015-1.6-2.62Z" clip-rule="evenodd"></path>
+                  </svg>
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 me-2">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-link px-2 text-white me-2" href="#" role="button" aria-expanded="false">
+                            All Projects
+                        </a>
+                        <div class="dropdown-menu justify-content-start p-3 rounded-3 shadow-lg" data-bs-theme="dark">
+                            <ul>
+                                <li>
+                                    <p class="dropdown-title text-center">Lua Scripts</p>
+                                    <li>
+                                        <a class="dropdown-item" href="<%= build_url( subSubMenuItem[k].url ) %>">Paragon</a>
+                                    </li>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="<%= build_url( subSubMenuItem[k].url ) %>">Level Boost</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="<%= build_url( subMenuItem[j].url ) %>">Adventurer's Guild</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="<%= build_url( menuItem[i].url ) %>" class="nav-link px-2 text-white me-2">
+                            Documentations
+                        </a>
+                    </li>
+                </ul>
+        
+                <div class="text-end">
+                    <a href="https://www.twitch.tv/ithorgrim_exe" class="btn btn-primary btn-lg bliz-orange-transparent-button me-2 mt-2" type="button">
+                        Join me on Twitch
+                    </a>
+        
+                    <a href="<%= session.user and build_url('logout') or build_url('register') %>" class="btn btn-primary btn-lg bliz-red-transparent-button me-2 mt-2" type="button">
+                        Make a donation
+                    </a>
+                </div>
+              </div>
+            </div>
+        </header>
         <main role="main" class="container">
                 <div class="container py-4">
                 <div class="p-5 mb-4 bg-image rounded-3" style="background-image: url('https://www.zupimages.net/up/23/26/1lc9.jpg'); background-size: cover;">
@@ -27,34 +79,25 @@
 
                 <div class="row align-items-md-stretch mb-4">
                         <div class="col-md-6">
-                                <div class="h-100 p-5 bg-body-tertiary rounded-3"  style="background-image: url('https://bnetcmsus-a.akamaihd.net/cms/blog_header/e4/E4XRBZEW5MF21698704166055.png'); background-size: cover; background-position: 50% 50%;">
-                                        <h2 class="fs-4 font-bliz-Large-white mt-5">Mounts and mascots linked to the account</h2>
-                                        <p class="fs-6 font-bliz-light-medium-beige">Offer your players the chance to benefit from their mounts and mascots linked to their accounts!</p>
-
-                                        <a href="register" class="btn btn-primary btn-lg bliz-red-transparent-button me-2 mt-2" type="button">Download</a>
-                                        <a href="pages/account-mount.html" class="btn btn-primary btn-lg bliz-orange-transparent-button me-2 mt-2" type="button">Read more</a>
-                                </div>
-                        </div>
-                        
-                        <div class="col-md-6">
                                 <div class="h-100 p-5 text-bg-dark rounded-3" style="background-image: url('https://bnetcmsus-a.akamaihd.net/cms/blog_header/4e/4E245ESWZ1R21684790548004.jpg'); background-size: cover; background-position: 50% 80%;">
                                         <h2 class="fs-4 font-bliz-Large-white mt-5">Sesame level up me ..</h2>
                                         <p class="fs-6 font-bliz-light-medium-beige">A keystone for new servers wishing to offer their players a smoother adventure.</p>
                                         <a href="pages/paragon.html" class="btn btn-primary btn-lg bliz-orange-transparent-button me-2 mt-2" type="button">Read more</a>
                                 </div>
                         </div>
-                </div>
-
-                <div class=" p-5 mb-4 bg-image rounded-3" style="background-image: url('https://www.zupimages.net/up/23/26/v764.png'); background-size: cover; background-position: 50% 50%;">
-                        <div class="container-fluid py-5">
-                                <h2 class="display-5 fw-bold font-bliz-Large-white">The Adventurer's Guild is on its way!</h2>
-                                <p class="col-md-8 fs-6 font-bliz-light-medium-beige">This system is currently under development. You'll soon be able to benefit of the Trading Post on your servers!</p>
-                                <a href="pages/adventurer-guild.html" class="btn btn-primary btn-lg bliz-orange-transparent-button me-2 mt-2" type="button">Read more</a>
+                        <div class="col-md-6">
+                            <div class="h-100 p-5 bg-body-tertiary rounded-3"  style="background-image: url('https://bnetcmsus-a.akamaihd.net/cms/blog_header/e4/E4XRBZEW5MF21698704166055.png'); background-size: cover; background-position: 50% 50%;">
+                                <h2 class="fs-4 font-bliz-Large-white mt-5">The Adventurer's Guild is on its way!</h2>
+                                <p class="fs-6 font-bliz-light-medium-beige">This system is currently under development. You'll soon be able to benefit of the Trading Post on your servers!</p>
+                                <a href="pages/account-mount.html" class="btn btn-primary btn-lg bliz-orange-transparent-button me-2 mt-2" type="button">Read more</a>
+                            </div>
                         </div>
                 </div>
 
                 <footer class="pt-3 mt-4 text-body-secondary">
-                        WARLOG &copy; <span id="currentYear"></span>
+                    <p class="fs-6 font-bliz-light-medium-beige text-center">WARLOG &copy;<span id="currentYear"></span> </p>
+                    <p class="fs-6 font-bliz-light-medium-beige text-center">World of Warcraft® and Blizzard Entertainment® are trademarks or registered trademarks of Blizzard Entertainment in the United States and/or other countries.</br>
+                    These terms and all materials, logos and images are copyrights of Blizzard Entertainment. This site is not associated with or endorsed by Blizzard Entertainment®.</p>
                 </footer>
         </div>
         </main>
